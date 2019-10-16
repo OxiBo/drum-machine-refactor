@@ -12,25 +12,25 @@ const Volume = ({
 }) => {
   const sign = name === "volumeUp" ? "+" : "-";
 
-  const handleVolumeMouseDown = async e => {
+  const handleVolumeMouseDown = e => {
     if (power) {
       const buttonType = e.target.id;
     //   console.log(`${buttonType} volume ${volume}`);
-    //   let intervalId;
+      let intervalId;
       if (buttonType === "volumeUp" && volume < 100) {
-        setVolumeInterval(await setInterval(async () => {
+        intervalId = setInterval(() => {
           if (volume < 100) {
-            await changeVolumeAction(1);
+            changeVolumeAction(1);
           }
-        }, 150));
-      } else if (buttonType === "volumeDown" && volume < 101) {
-        setVolumeInterval(await setInterval(async () => {
+        }, 150);
+      } else if (buttonType === "volumeDown" && volume <= 100) {
+        intervalId = setInterval(() => {
           if (volume > 0) {
-            await changeVolumeAction(-1);
+            changeVolumeAction(-1);
           }
-        }, 150));
+        }, 150);
       }
-    //   setVolumeInterval(intervalId);
+      setVolumeInterval(intervalId);
     }
   };
 

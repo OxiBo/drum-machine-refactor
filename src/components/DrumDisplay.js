@@ -20,11 +20,11 @@ const DrumDisplay = ({ drumPads }) => {
 
 
         return (
-            <div>
+            <React.Fragment>
                 <div id="clipName">
                         {pads}
                 </div>
-            </div>
+            </React.Fragment>
         )
     }
 

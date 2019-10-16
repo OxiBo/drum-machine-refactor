@@ -21,7 +21,6 @@ export const drumPadClicked = (clipName) => {
 }
 
 export const changeVolumeAction = (num) => {
-    console.log(num)
     return {
         type: VOLUME_CHANGE,
         payload: num
