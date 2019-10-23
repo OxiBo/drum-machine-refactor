@@ -19,7 +19,6 @@ const defaultState = {
 export const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case POWER_ON_OFF:
-      console.log(state);
       return {
         ...state,
         power: !state.power,
@@ -51,7 +50,6 @@ export const reducer = (state = defaultState, action) => {
     //   }
 
     case SET_VOLUME_INTERVAL:
-      console.log(action.payload);
       return {
         ...state,
         intervalIdVolume: action.payload
